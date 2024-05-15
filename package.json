@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nodemon src/server.ts",
     "lint": "eslint . --ext .ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
   },
   "keywords": [],
   "author": "Misun Kang",
@@ -43,13 +44,8 @@
     "mongodb": "^6.5.0",
     "mongoose": "^7.4.3",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.9.4"
-  },
-  "scripts": {
-    "start": "nodemon src/server.ts",
-    "lint": "eslint . --ext .ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ."
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.13"
   },
   "description": ""
 }
