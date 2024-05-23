@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
     cors({
         credentials: true,
-        origin: "http://localhost:3000",
+        origin: "https://wekafrontend.netlify.app",  // Updated to your frontend domain
     })
 );
 
@@ -58,13 +58,13 @@ app.use("/api/bookings", bookingRoutes);
 app.use("/api/calendars", calendarRoutes);
 
 app.use((req, res, next) => {
-    next (createHttpError(404, "Endpoint not found"));
-})
+    next(createHttpError(404, "Endpoint not found"));
+});
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
     console.error(error);
-    let errorMessage = "An unknwon error occured";
+    let errorMessage = "An unknown error occurred";
     let statusCode = 500;
     if (isHttpError(error)) {
         statusCode = error.status;
